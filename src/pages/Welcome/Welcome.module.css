@@ -1,0 +1,74 @@
+.welcomeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    background-image: url('https://source.unsplash.com/1600x900/?city,government');
+    /* Background image */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    /* Prevent scrolling */
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom right,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.5));
+    /* Semi-transparent overlay */
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 2rem;
+    /* Space between buttons */
+}
+
+.publicButton,
+.municipalButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    width: 300px;
+    /* Fixed width for buttons */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.publicButton:hover,
+.municipalButton:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Lighten background on hover */
+}
+
+.emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 1rem;
+    opacity: 0.8;
+}
