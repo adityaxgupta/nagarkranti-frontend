@@ -1,0 +1,142 @@
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom right,
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.5));;
+}
+
+.authBox {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 800px;
+    max-width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggleButton.active {
+    border-bottom: 2px solid white;
+    font-weight: bold;
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.875rem;
+    color: white;
+}
+
+.inputGroup input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inputGroup input:focus {
+    border-color: white;
+}
+
+.submitButton {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: white;
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    transform: scale(1.05);
+    background-color: rgba(59, 130, 246, 0.3);
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.nameRow {
+    display: flex;
+    gap: 1rem;
+}
+
+.nameRow .inputGroup {
+    flex: 1;
+}
+
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fadeOut {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
