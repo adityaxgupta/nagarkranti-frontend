@@ -4,7 +4,7 @@ import styles from '../../styles/pages/Auth.module.css';
 
 export default function PublicAuth() {
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(true); // Toggle between Login and Signup
+  const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     firstName: '',
     middleName: '',
@@ -14,12 +14,12 @@ export default function PublicAuth() {
     password: '',
   });
   const [errors, setErrors] = useState({});
-  const [isTransitioning, setIsTransitioning] = useState(false); // Track transition state
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleToggle = () => {
-    setIsTransitioning(true); // Start transition
+    setIsTransitioning(true); 
     setTimeout(() => {
-      setIsLogin(!isLogin); // Toggle form after fade-out
+      setIsLogin(!isLogin); 
       setFormData({
         firstName: '',
         middleName: '',
@@ -29,8 +29,8 @@ export default function PublicAuth() {
         password: '',
       });
       setErrors({});
-      setIsTransitioning(false); // End transition
-    }, 300); // Match the duration of the CSS transition
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const handleChange = (e) => {
@@ -72,13 +72,12 @@ export default function PublicAuth() {
     e.preventDefault();
     if (validateForm()) {
       if (isLogin) {
-        // Handle login logic
+        
         console.log('Logging in...', formData);
-        navigate('/public'); // Redirect to public homepage after login
+        navigate('/public'); 
       } else {
-        // Handle signup logic
         console.log('Signing up...', formData);
-        navigate('/public'); // Redirect to public homepage after signup
+        navigate('/public'); 
       }
     }
   };

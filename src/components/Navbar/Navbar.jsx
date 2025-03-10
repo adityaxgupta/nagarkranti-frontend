@@ -6,11 +6,11 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // Go to the previous page
+    navigate(-1);
   };
 
   const goForward = () => {
-    navigate(1); // Go to the next page
+    navigate(1);
   };
 
   console.log('Navbar is rendering!');
