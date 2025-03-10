@@ -1,29 +1,32 @@
-.authContainer {
+.createGrievancePage {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
+    overflow-y: hidden;
+
 }
 
 .overlay {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
+    padding: 2rem;
     background: black;
+    min-height: 91vh;
 }
 
-.authBox {
+.grievanceBox {
+    margin-top: 10vh;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 2rem;
-    width: 800px;
+    width: 1200px;
     max-width: 90%;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -40,34 +43,36 @@
     }
 }
 
-.toggleContainer {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-}
-
-.toggleButton {
-    flex: 1;
-    padding: 0.75rem;
-    font-size: 1rem;
+h1 {
+    font-size: 2rem;
     color: white;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.toggleButton.active {
-    border-bottom: 2px solid white;
-    font-weight: bold;
+.formContainer {
+    display: flex;
+    gap: 2rem;
 }
 
-.authForm {
+.grievanceForm {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.mapContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mapContainer .leaflet-container {
+    height: 100%;
     width: 100%;
+    border-radius: 8px;
 }
 
 .inputGroup {
@@ -81,6 +86,8 @@
     color: white;
 }
 
+.inputGroup select,
+.inputGroup textarea,
 .inputGroup input {
     padding: 0.75rem;
     font-size: 1rem;
@@ -94,8 +101,33 @@
     box-sizing: border-box;
 }
 
+.inputGroup select:focus,
+.inputGroup textarea:focus,
 .inputGroup input:focus {
     border-color: white;
+}
+
+.inputGroup textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.inputGroup input[readonly] {
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: not-allowed;
+}
+
+.imagePreview {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.imagePreview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .submitButton {
@@ -114,27 +146,3 @@
     background-color: rgba(59, 130, 246, 0.3);
 }
 
-.error {
-    color: #ff6b6b;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-}
-
-.nameRow {
-    display: flex;
-    gap: 1rem;
-}
-
-.nameRow .inputGroup {
-    flex: 1;
-}
-
-.fadeIn {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.fadeOut {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}

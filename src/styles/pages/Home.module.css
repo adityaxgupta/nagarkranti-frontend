@@ -1,0 +1,249 @@
+.container {
+  display: flex;
+  height: 100vh; 
+  width: 100vw;
+  background: black;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden; 
+}
+
+.sidebar {
+  margin-top: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90vh;
+  width: 5vw; 
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  padding: 0.4rem 0.8rem;
+  transition: all 0.5s ease;
+  z-index: 1000; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar.open {
+  width: 250px; 
+}
+
+.toggleSidebarButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterButton {
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterButton:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterOption {
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.filterOption.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.filterOption:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.createPostButton {
+  padding: 0.75rem;
+  background-color: rgba(59, 130, 246, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.createPostButton:hover {
+  transform: scale(1.05);
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.logoutButton {
+  margin-top: auto;
+  padding: 0.75rem;
+  background-color: #ff6b6b;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 4vh;
+}
+
+.logoutButton:hover {
+  transform: scale(1.05);
+  background-color: #ff4c4c;
+}
+
+.mainContent {
+  flex: 1; 
+  padding: 1rem;
+  overflow-y: auto;
+  margin-left: 7vw; 
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+}
+
+.postsGrid {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  width: 100%; 
+}
+
+.postCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.postImage {
+  display: block;
+  margin: 5% auto; 
+  border-radius: 10px;
+  width: 280px;
+  height: 280px; 
+  object-fit: cover;
+}
+
+.postDetails {
+  padding: 1rem;
+}
+
+.postCategory {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #6d28d9;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.postTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.postDescription {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.postLocation,
+.postStatus {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.postReports {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5rem;
+}
+
+.sortButton {
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.sortButton:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sort Options */
+.sortOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.sortOption {
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sortOption.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sortOption:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
