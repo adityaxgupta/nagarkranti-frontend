@@ -3,40 +3,41 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faPlus, faSignOutAlt, faBars, faSort } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../styles/pages/Home.module.css";
+import pothole from "../../assets/pothole.jpg";
+import sewage from "../../assets/sewage.avif";
+import streetlight from "../../assets/streetlight.jpg";
+
 
 const samplePosts = [
   {
     id: 1,
-    image: "https://picsum.photos/200/300",
-    category: "Garbage",
-    title: "Garbage Pileup in Sector 5",
-    description: "Garbage has not been collected for over a week.",
-    location: "Sector 5, City",
+    title: "Pothole on Main Road",
+    description: "There is a deep pothole on the main road, causing accidents.",
+    location: "Lat: 28.6319, Lng: 77.2263",
     status: "Pending",
     reports: 5,
+    image: pothole,
   },
   {
     id: 2,
-    image: "https://picsum.photos/400/300",
-    category: "Roads",
-    title: "Pothole on Main Street",
-    description: "Large pothole causing traffic issues.",
-    location: "Main Street, City",
+    title: "Sewage Overflow",
+    description: "Sewage water is overflowing on the streets, creating a foul smell.",
+    location: "Lat: 28.6357, Lng: 77.2244",
     status: "In Progress",
-    reports: 12,
+    reports: 3,
+    image: sewage,
   },
   {
     id: 3,
-    image: "https://picsum.photos/600/300",
-    category: "Streetlights",
     title: "Streetlight Not Working",
-    description: "Streetlight has been out for 3 days.",
-    location: "Park Avenue, City",
+    description: "A major streetlight is not functioning, making the road unsafe at night.",
+    location: "Lat: 28.6402, Lng: 77.2301",
     status: "Resolved",
-    reports: 3,
+    reports: 7,
+    image: streetlight,
   },
-];
 
+];
 export default function PublicHome() {
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
@@ -63,7 +64,7 @@ export default function PublicHome() {
   }
 
   const handlePostClick = (postId) => {
-    navigate(`/GrievanceDetail/${postId}`);
+    navigate(`/grievance/${postId}`, { state: { posts } });
   };
 
   const handleCreatePost = () => {
