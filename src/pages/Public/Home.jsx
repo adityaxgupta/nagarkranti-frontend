@@ -11,6 +11,7 @@ import streetlight from "../../assets/streetlight.jpg";
 const samplePosts = [
   {
     id: 1,
+    category: "Roads",
     title: "Pothole on Main Road",
     description: "There is a deep pothole on the main road, causing accidents.",
     location: "Lat: 28.6319, Lng: 77.2263",
@@ -20,6 +21,7 @@ const samplePosts = [
   },
   {
     id: 2,
+    category: "Sewage",
     title: "Sewage Overflow",
     description: "Sewage water is overflowing on the streets, creating a foul smell.",
     location: "Lat: 28.6357, Lng: 77.2244",
@@ -29,6 +31,7 @@ const samplePosts = [
   },
   {
     id: 3,
+    category: "Streetlights",
     title: "Streetlight Not Working",
     description: "A major streetlight is not functioning, making the road unsafe at night.",
     location: "Lat: 28.6402, Lng: 77.2301",
